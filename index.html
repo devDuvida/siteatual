@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFull - Desenvolvedor Full Stack</title>
+    <style>
+        .portfolio {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            transform: translateY(0);
+        }
+
+        .portfolio-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .portfolio-info p {
+            margin: 0 0 15px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">DevFull</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Dev Full Stack Duda</h1>
+            <p>Transformando ideias em soluções digitais completas</p><a href="#contact" class="cta-button">Iniciar
+                Projeto</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-code"></i>
+                <h3>Desenvolvimento Frontend</h3>
+                <p>Interfaces modernas e responsivas com React,
+                    Vue.js e Angular</p>
+            </div>
+            <div class="service-card"><i class="fas fa-server"></i>
+                <h3>Desenvolvimento Backend</h3>
+                <p>APIs robustas com Node.js,
+                    Python e Java</p>
+            </div>
+            <div class="service-card"><i class="fas fa-database"></i>
+                <h3>Banco de Dados</h3>
+                <p>Modelagem e otimização com MySQL,
+                    MongoDB e PostgreSQL</p>
+            </div>
+            <div class="service-card"><i class="fas fa-mobile-alt"></i>
+                <h3>Desenvolvimento Mobile</h3>
+                <p>Aplicativos nativos e híbridos com React Native e Flutter</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfólio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item"><img src="5.png" alt="Projeto 1">
+                <div class="portfolio-overlay">
+                    <h3>E-commerce</h3>
+                    <p>React+Node.js+MongoDB</p>
+                </div>
+            </div>
+            <div class="portfolio-item"><img src="8.jpg" alt="Projeto 2">
+                <div class="portfolio-overlay">
+                    <h3>App de Delivery</h3>
+                    <p>React Native+Firebase</p>
+                </div>
+            </div>
+            <div class="portfolio-item"><img src="2.png" alt="Projeto 3">
+                <div class="portfolio-overlay">
+                    <h3>Sistema ERP</h3>
+                    <p>Vue.js+Python+PostgreSQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>Depoimentos</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial"><img src="depoimentos.png" alt="Cliente 1" class="client-image">
+                <p>"Excelente profissional! Entregou o projeto no prazo e com qualidade
+                    excepcional." </p>
+                <h4>Maria Silva</h4>
+                <p class="company">Tech Solutions</p>
+            </div>
+            <div class="testimonial"><img src="depoimentos.png" alt="Cliente 2" class="client-image">
+                <p>"Muito satisfeito com o resultado final. Recomendo fortemente!" </p>
+                <h4>João Santos</h4>
+                <p class="company">Startup Innovation</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <div class="contact-container">
+            <form class="contact-form"><input type="text" placeholder="Nome" required><input type="email"
+                    placeholder="Email" required><textarea placeholder="Mensagem" required></textarea><button
+                    type="submit" class="submit-button">Enviar
+                    Mensagem</button></form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i
+                        class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+            <p>&copy;
+                2024 DevFull. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!-- Header -->
+<!-- Hero Section -->
+<!-- Services Section -->
+<!-- Portfolio Section -->
+<h2 class="section-title">Portfólio</h2>
+<h2>Portfólio</h2>
+<div class="portfolio-info">
+    <div class="portfolio-overlay">
+        <a href="#" class="btn">Ver Projeto</a>
+        <div class="portfolio-info">
+            <div class="portfolio-overlay">
+                <a href="#" class="btn">Ver Projeto</a>
+                <div class="portfolio-info">
+                    <div class="portfolio-overlay">
+                        <a href="#" class="btn">Ver Projeto</a>
+                        <!-- Testimonials Section -->
+                        <!-- Contact Section -->
+                        <!-- Footer -->
